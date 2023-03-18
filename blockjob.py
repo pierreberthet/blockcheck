@@ -80,3 +80,9 @@ def run():
     
     print(f"Checked at {datetime.now().strftime('%H:%M:%S %d/%m/%Y')}")
     return
+
+
+#%%
+# TODO (dev)
+# add cron job
+# send email with links when new jobs
