@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Created on Thu Mar 16 13:59:43 2023
@@ -7,14 +7,19 @@ Created on Thu Mar 16 13:59:43 2023
 """
 
 # import requests
+import os
+import pandas as pd
+import sys
+print(sys.version)
+print(sys.path)
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
-import pandas as pd
 
 import time
 from datetime import datetime
-import os
+
 #%%
 def run():
     url = "https://block.xyz/careers?business=TBD|Block|Cash%20App|Square&locations=British%20Columbia%2C%20Canada|Dublin%2C%20United%20Kingdom|Chisinau%2C%20Moldova%2C%20republic%20of|San%20Diego%2C%20United%20States|Seattle%2C%20United%20States|Berlin%2C%20United%20Kingdom|Amsterdam%2C%20Netherlands|Remote|Portland%20Metro%2C%20United%20States|Montreal%2C%20Canada|Barcelona%2C%20Ireland|Raleigh%2C%20United%20States|US%20-%20CA%20-%20%20NorCal%20Remote|Barcelona%2C%20Spain|Los%20Angeles%2C%20United%20States|Tokyo%2C%20Japan|Stockholm%2C%20Norway|Toronto%20or%20Vancouver%2C%20Canada|Warsaw%2C%20Norway|Dublin%2C%20Ireland|Toronto%2C%20Canada|Mountain%20View%2C%20United%20States|Berlin%2C%20Norway|Portland%20Metro%20%28Remote%29%2C%20United%20States|Ciudad%20de%20Mexico%2C%20Mexico|Manchester%2C%20United%20Kingdom|Melbourne%2C%20Australia|Oslo%2C%20Norway|Salt%20Lake%20City%2C%20United%20States|London%2C%20United%20Kingdom|Southern%20CA%20%28Remote%29%2C%20United%20States|Colorado%20Springs%2C%20United%20States|Barcelona%2C%20Norway|Berlin%2C%20Germany|Warsaw%2C%20Poland|Vancouver%2C%20Canada|Portland%2C%20United%20States|Mexico%20City%2C%20Mexico&roles=Supply%20Chain|Analytics|Data%20Science%20%26%20Machine%20Learning"
@@ -58,7 +63,9 @@ def run():
         for ci in current.index:
             if ci not in previous.index:
                 found_new = True
-                print(f"NEW: {current.loc[ci,:]} \n")
+                print(f"!!! NEW !!!:    {current.loc[ci,'title']}   ---   {current.loc[ci,'business']}\
+        \n{current.loc[ci,'location']}\n{current.loc[ci,'date']}\
+        \n{ci}\n")
         if not found_new:
             print('no new jobs listed')
         
