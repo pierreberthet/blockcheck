@@ -31,8 +31,7 @@ email_to = os.getenv('NOTIF_EMAIL')
 
 #%%
 def run():
-    url = "https://block.xyz/careers?business=TBD|Block|Cash%20App|Square&locations=British%20Columbia%2C%20Canada|Dublin%2C%20United%20Kingdom|Chisinau%2C%20Moldova%2C%20republic%20of|San%20Diego%2C%20United%20States|Seattle%2C%20United%20States|Berlin%2C%20United%20Kingdom|Amsterdam%2C%20Netherlands|Remote|Portland%20Metro%2C%20United%20States|Montreal%2C%20Canada|Barcelona%2C%20Ireland|Raleigh%2C%20United%20States|US%20-%20CA%20-%20%20NorCal%20Remote|Barcelona%2C%20Spain|Los%20Angeles%2C%20United%20States|Tokyo%2C%20Japan|Stockholm%2C%20Norway|Toronto%20or%20Vancouver%2C%20Canada|Warsaw%2C%20Norway|Dublin%2C%20Ireland|Toronto%2C%20Canada|Mountain%20View%2C%20United%20States|Berlin%2C%20Norway|Portland%20Metro%20%28Remote%29%2C%20United%20States|Ciudad%20de%20Mexico%2C%20Mexico|Manchester%2C%20United%20Kingdom|Melbourne%2C%20Australia|Oslo%2C%20Norway|Salt%20Lake%20City%2C%20United%20States|London%2C%20United%20Kingdom|Southern%20CA%20%28Remote%29%2C%20United%20States|Colorado%20Springs%2C%20United%20States|Barcelona%2C%20Norway|Berlin%2C%20Germany|Warsaw%2C%20Poland|Vancouver%2C%20Canada|Portland%2C%20United%20States|Mexico%20City%2C%20Mexico&roles=Supply%20Chain|Analytics|Data%20Science%20%26%20Machine%20Learning"
-    
+    url = "https://block.xyz/careers?business=TBD|Block|Cash%20App|Square|TIDAL&locations=British%20Columbia%2C%20Canada|Dublin%2C%20United%20Kingdom|Chisinau%2C%20Moldova%2C%20republic%20of|San%20Diego%2C%20United%20States|Seattle%2C%20United%20States|Berlin%2C%20United%20Kingdom|Amsterdam%2C%20Netherlands|Remote|Portland%20Metro%2C%20United%20States|Montreal%2C%20Canada|Barcelona%2C%20Ireland|Raleigh%2C%20United%20States|US%20-%20CA%20-%20%20NorCal%20Remote|Barcelona%2C%20Spain|Los%20Angeles%2C%20United%20States|Tokyo%2C%20Japan|Stockholm%2C%20Norway|Toronto%20or%20Vancouver%2C%20Canada|Warsaw%2C%20Norway|Dublin%2C%20Ireland|Toronto%2C%20Canada|Mountain%20View%2C%20United%20States|Berlin%2C%20Norway|Portland%20Metro%20%28Remote%29%2C%20United%20States|Ciudad%20de%20Mexico%2C%20Mexico|Manchester%2C%20United%20Kingdom|Melbourne%2C%20Australia|Oslo%2C%20Norway|Salt%20Lake%20City%2C%20United%20States|London%2C%20United%20Kingdom|Southern%20CA%20%28Remote%29%2C%20United%20States|Colorado%20Springs%2C%20United%20States|Barcelona%2C%20Norway|Berlin%2C%20Germany|Warsaw%2C%20Poland|Vancouver%2C%20Canada|Portland%2C%20United%20States|Mexico%20City%2C%20Mexico&roles=Supply%20Chain|Analytics|Data%20Science%20%26%20Machine%20Learning"
     save_dir = '/media/terror/code/projects/blockcheck/'
     previous_jobs = 'previous_df.csv'
     os.chdir(save_dir)
@@ -47,7 +46,7 @@ def run():
     soup = BeautifulSoup(driver.page_source, 'html5lib')
     
     driver.close()
-    #%%
+    
     
     # Find all job listings on the page
     job_listings = soup.find_all('a', class_='JobList_link__yOMBM')
